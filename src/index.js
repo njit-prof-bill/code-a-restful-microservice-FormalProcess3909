@@ -43,7 +43,7 @@ app.get('/users/:id', (req, res) => {
         return res.status(404).json({ error: 'User not found' });
     }
 
-    res.json(user); // Return the found user
+    res.json(user); // Return the found user. Automatically returns 200 OK status
 });
 
 // PUT /users/:id - Update a user's information by ID
@@ -66,7 +66,7 @@ app.put('/users/:id', (req, res) => {
 
     // Update the user details
     users[userIndex] = { id: userId, name, email };
-    res.json(users[userIndex]); // Return the updated user object
+    res.json(users[userIndex]); // Return the updated user object. Automatically returns 200 OK status
 });
 
 // DELETE /users/:id - Delete a user by their ID
